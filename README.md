@@ -4,11 +4,11 @@ The goal of this project is to predict patient's 'AML' or 'Normal' status from p
 
 Download Dataset: [pengqiu.gatech.edu/MLB/CSV.zip](http://pengqiu.gatech.edu/MLB/CSV.zip.)
 
-#### Data Preprocessing and Normalization: (see [data preprocessing.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_preprocessing_and_normalization.ipynb))
+#### Data Preprocessing and Normalization: [data preprocessing.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_preprocessing_and_normalization.ipynb)
 
 The values in the FCS measurements files were normalized with respect to each other and then I took a mean features approach and averaged all features in each file to create 7 cells per file. For each patient file, I appended the average measurements to create a 56 column (7 x 8) feature vector. With all the patient subjects, the combined data was a 359 rows x 56 columns matrix, with the rows as features of one patient and the columns are the measurement categories.
 
-#### Data Splitting: <see [data_split.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_split.ipynb)>
+#### Data Splitting: [data_split.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_split.ipynb)
 
 After data preprocessing and normalization, I split the training data randomly using a 80/20 split ratio. I used the split data to train multiple machine learning models on 80% of the data points and then used the other 20% for data validation
 
