@@ -4,15 +4,15 @@ The goal of this project is to predict patient's 'AML' or 'Normal' status from p
 
 Download Dataset: [pengqiu.gatech.edu/MLB/CSV.zip](http://pengqiu.gatech.edu/MLB/CSV.zip.)
 
-#### Data Preprocessing and Normalization: [data preprocessing.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_preprocessing_and_normalization.ipynb)
+### Data Preprocessing and Normalization: [data preprocessing.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_preprocessing_and_normalization.ipynb)
 
 The values in the FCS measurements files were normalized with respect to each other and then I took a mean features approach and averaged all features in each file to create 7 cells per file. For each patient file, I appended the average measurements to create a 56 column (7 x 8) feature vector. With all the patient subjects, the combined data was a 359 rows x 56 columns matrix, with the rows as features of one patient and the columns are the measurement categories.
 
-#### Data Splitting: [data_split.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_split.ipynb)
+### Data Splitting: [data_split.ipynb](https://github.com/manasa711/AML-Classification/blob/main/data_split.ipynb)
 
 After data preprocessing and normalization, I split the training data randomly using a 80/20 split ratio. I used the split data to train multiple machine learning models on 80% of the data points and then used the other 20% for data validation
 
-#### Testing and Choosing Machine Learning Models:
+### Testing and Choosing Machine Learning Models:
 
 I tested out three different machine learning classification algorithms:
 - [Logistic Regression](https://github.com/manasa711/AML-Classification/blob/main/Logistic_Regression_Model.ipynb)
@@ -38,10 +38,10 @@ Therefore, in order to decide which model to use for predicting on the test data
 
 After comparing the predictions of each test by the KNN and Random Forest models and I found 4 differences. To further discern the models on these 4 different predictions, we compared the prediction probabilities of each prediction in both the models and found that the KNN model had a higher prediction probability in all 4 cases (it was more confident in each of its answers than the Random Forest model was). Therefore, we used the KNN model to create our predictions.
 
-#### Level of Confidence:
+### Level of Confidence:
 
 By assessing the prediction probabilities on each test sample using KNN model, I saw that 170 of the test cases had 1.0 prediction probability. However, the prediction probabilities varied between 0.62 and 0.74 for the remaining 10 predictions. Of these 10 cases, 4 of them were predicted differently in the Random Forest model. There are a total of 176 samples which produced the same prediction between both the KNN and the RF model. This included a combination of the 170 from KNN with 1.0 prediction probability and the other 6 that the two models did not disagree on. As a result, I found 176 predictions that are highly confident and the other 4 predictions that are slightly less confident (samples 239, 250, 337, and 357).
 
-#### Result:
+### Result:
 
 Using the KNN model, I have been able to identify 20 AML positive cases out of the 180 samples.
